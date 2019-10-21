@@ -6,7 +6,7 @@ set -e
 . includes/helpers.sh
 
 log "cleaning '$PROJECT' artefacts" "heading"
-depchecker " docker git"
+depchecker "docker git"
 
 log "should we remove docker build containers? [y|N]" "confirm" && (
   (docker rmi "${DOCKER_REGISTRY}${DOCKER_IMAGE}:build" || log "no build image to clean up")
