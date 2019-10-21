@@ -1,0 +1,7 @@
+ARG base
+FROM $base:build as build
+
+FROM scratch
+LABEL maintainer "Peter McConnell <me@petermcconnell.com>"
+COPY --from=build /go/foo /bin/foo
+ENTRYPOINT ["/bin/foo"]
