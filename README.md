@@ -32,8 +32,10 @@ foo --out foo.json
 
 ### dependencies
 
-- `something`
-- `shell`
+- `hadolint`
+- `shellcheck`
+- `docker`
+- `bats`
 
 ### build
 
