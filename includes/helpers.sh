@@ -15,7 +15,7 @@ log(){
     colour='1;34;4'
   elif [ "$format" = "ok" ]; then
     colour='32;3'
-    printf '\e[%sm\u2714\e[0m ' "$colour"
+    printf '\e[%sm\342\234\224\e[0m ' "$colour"
   elif [ "$format" = "error" ]; then
     error=1
     colour='31;3'
