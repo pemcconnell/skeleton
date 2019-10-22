@@ -22,4 +22,6 @@ docker build \
   .
 
 log "validate that '$PROJECT' runs via the scratch container"
-docker run --rm -ti "${DOCKER_REGISTRY}${DOCKER_IMAGE}:scratch"
+docker run \
+  --rm \
+  -ti "${DOCKER_REGISTRY}${DOCKER_IMAGE}:scratch"
