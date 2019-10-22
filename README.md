@@ -3,6 +3,8 @@ skeleton
 
 `foo` is a tool for ... It requires no internet connection to run, nor does it depend on any external libraries.
 
+[![CircleCI](https://circleci.com/gh/pemcconnell/skeleton/tree/master.svg?style=svg)](https://circleci.com/gh/pemcconnell/skeleton/tree/master)
+
 ## install
 
 `go get -u github.com/pemcconnell/foo`
