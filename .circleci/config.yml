@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    shell: /bin/sh
+    environment:
+      - PROJECT=foo
+    steps:
+      - checkout
+      - run: ./build.sh
+      - run: ./test.sh
