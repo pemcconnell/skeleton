@@ -8,12 +8,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN curl -L https://github.com/hadolint/hadolint/releases/download/v1.17.2/hadolint-Linux-x86_64 -o /usr/local/bin/hadolint \
     && chmod +x /usr/local/bin/hadolint
-RUN curl -L https://github.com/sstephenson/bats/archive/v0.4.0.tar.gz -o /tmp/bats.tar.gz \
-    && tar -C /tmp/ -xvf /tmp/bats.tar.gz \
-    && cp -L /tmp/bats-0.4.0/bin/bats /usr/local/bin/bats \
-    && chmod +x /usr/local/bin/bats \
-    && rm -f /tmp/bats.tar.gz \
-    && rm -rf /tmp/bats-0.4.0
+RUN git clone https://github.com/sstephenson/bats.git /tmp/bats \
+    && /tmp/bats/install.sh /usr/local \
+    && rm -rf /tmp/bats
 
 RUN mkdir -p /go
 WORKDIR /go
