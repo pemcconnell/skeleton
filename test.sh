@@ -27,7 +27,10 @@ else
 
   # tests
   log "dockerfile lint"
-  (hadolint Dockerfile && log "hadolint ...ok" "ok") || errs=1
+  dockerfiles="Dockerfile Dockerfile.scratch"
+  for df in $dockerfiles; do
+    (hadolint "$df" && log "$df ...ok" "ok") || errs=1
+  done
   log "shell linting"
   (shellcheck -x ./*.sh && log "shellcheck ...ok" "ok") || errs=1
   log "shell unittests"
