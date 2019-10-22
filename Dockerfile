@@ -12,7 +12,8 @@ RUN git clone https://github.com/sstephenson/bats.git /tmp/bats \
     && /tmp/bats/install.sh /usr/local \
     && rm -rf /tmp/bats
 
-RUN mkdir -p /go
+RUN mkdir -p /go /.cache \
+    && chmod 777 /.cache
 WORKDIR /go
 ENV GOPATH /go
 COPY . /go
